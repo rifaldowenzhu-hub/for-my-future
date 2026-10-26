@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You, My Love ♡</title>
+<style>
+:root{--wine:#3b0718;--wine2:#64152b;--gold:#d8b46a;--cream:#fff4df;--muted:#d9bd9d}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--cream);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at top,#6c1931 0%,#310612 52%,#17030a 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#e8c878 1px,transparent 1px);background-size:34px 34px}
+.wrap{width:min(1000px,92%);margin:auto;padding:48px 0 40px;text-align:center;position:relative}
+.eyebrow{letter-spacing:5px;text-transform:uppercase;font:11px Arial,sans-serif;color:var(--gold)}
+h1{font-size:clamp(42px,8vw,78px);font-weight:normal;line-height:1.02;margin:18px 0 12px;text-shadow:0 3px 24px #0008}
+h1 em{color:var(--gold);font-style:italic}
+.subtitle{color:#f0d9c2;font-size:17px;line-height:1.7;max-width:570px;margin:0 auto}
+.rule{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:28px auto}
+.age{display:inline-block;border:1px solid #d8b46a80;padding:8px 17px;border-radius:99px;color:var(--gold);font:11px Arial,sans-serif;letter-spacing:2px;margin-top:20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:42px auto 30px;max-width:760px}
+.card{border:1px solid #d8b46a66;border-radius:20px;background:linear-gradient(145deg,#ffffff0d,#00000025);padding:25px 12px 22px;color:var(--cream);cursor:pointer;transition:.25s;box-shadow:0 12px 35px #0002}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);background:#ffffff12}
+.icon{display:grid;place-items:center;width:66px;height:66px;border:1px solid var(--gold);border-radius:50%;font-size:29px;color:var(--gold);margin:0 auto 14px;box-shadow:inset 0 0 20px #d8b46a12}
+.card strong{display:block;font-size:20px;font-weight:normal;margin-bottom:7px}
+.card small{font:11px Arial,sans-serif;letter-spacing:1.2px;color:var(--muted)}
+.footer{font:10px Arial,sans-serif;letter-spacing:2px;color:#d9bd9d99;margin-top:34px}
+.heart{color:var(--gold);animation:pulse 1.8s infinite;display:inline-block}
+@keyframes pulse{50%{transform:scale(1.18)}}
+.modal{display:none;position:fixed;z-index:5;inset:0;background:#100208eF;overflow:auto;padding:22px;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.panel{width:min(760px,100%);max-height:92vh;overflow:auto;background:linear-gradient(145deg,#551126,#260611);border:1px solid #d8b46a99;border-radius:20px;padding:25px;text-align:left;box-shadow:0 20px 80px #0009;position:relative}
+.panel h2{font-weight:normal;color:var(--gold);font-size:30px;margin:0 0 10px}
+.panel p{line-height:1.8;color:#f6e6d1}
+.close{float:right;border:1px solid #d8b46a88;background:transparent;color:var(--gold);border-radius:50%;width:35px;height:35px;font-size:20px;cursor:pointer}
+input[type=file],input[type=text]{max-width:100%;width:100%;padding:12px;border:1px solid #d8b46a66;border-radius:10px;background:#21040d;color:var(--cream);margin:8px 0 14px}
+.btn{border:1px solid var(--gold);border-radius:99px;background:var(--gold);color:#2a0711;padding:11px 18px;font-weight:bold;cursor:pointer}
+.btn.secondary{background:transparent;color:var(--gold);margin-left:7px}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.photos img{width:100%;height:190px;object-fit:cover;border-radius:12px;border:1px solid #d8b46a66}
+.note{font:12px Arial,sans-serif;color:#d9bd9d;line-height:1.6}
+.video{position:relative;width:100%;padding-top:56.25%;margin-top:15px;border-radius:12px;overflow:hidden;background:#16030a}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.letter{font-size:17px;white-space:pre-line}
+.signature{font-style:italic;color:var(--gold)!important;font-size:21px}
+@media(max-width:600px){.wrap{padding-top:38px}.cards{gap:9px}.card{padding:18px 5px}.icon{width:54px;height:54px;font-size:24px}.card strong{font-size:16px}.card small{font-size:9px;letter-spacing:.6px}.panel{padding:19px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="eyebrow">A little world made just for you</div>
+  <h1>Happy Birthday,<br><em>My Love</em> <span class="heart">♡</span></h1>
+  <p class="subtitle">For your 25th birthday — a little place for our memories, our song, and words I hope you can keep close to your heart.</p>
+  <div class="age">CHAPTER 25 · YOUR SPECIAL DAY</div>
+  <div class="rule"></div>
+  <section class="cards" aria-label="Birthday features">
+    <button class="card" onclick="openModal('photos')"><span class="icon">♡</span><strong>Our Memories</strong><small>THE PHOTOS</small></button>
+    <button class="card" onclick="openModal('song')"><span class="icon">♫</span><strong>Our Song</strong><small>PRESS PLAY</small></button>
+    <button class="card" onclick="openModal('letter')"><span class="icon">✉</span><strong>A Letter</strong><small>FROM MY HEART</small></button>
+  </section>
+  <div class="rule"></div>
+  <p class="subtitle" style="font-style:italic">“May life be gentle with you, and may you always feel how deeply you are loved.”</p>
+  <div class="footer">MADE WITH LOVE <span class="heart">♥</span> JUST FOR YOU</div>
+</main>
+
+<div class="modal" id="photos" onclick="backdropClose(event,'photos')"><div class="panel">
+  <button class="close" onclick="closeModal('photos')">×</button>
+  <h2>Our Memories ♡</h2>
+  <p>Every little moment with you means something to me. Add your favourite photos here.</p>
+  <label for="photoUpload" class="note">PILIH FOTO DARI PERANGKATMU (BISA LEBIH DARI SATU)</label>
+  <input id="photoUpload" type="file" accept="image/*" multiple onchange="showPhotos(event)">
+  <div class="photos" id="photoPreview"></div>
+  <p class="note">Foto ditampilkan langsung di browser dan tidak diunggah ke server. Saat halaman ditutup atau dimuat ulang, pilih kembali foto-fotonya.</p>
+</div></div>
+
+<div class="modal" id="song" onclick="backdropClose(event,'song')"><div class="panel">
+  <button class="close" onclick="closeModal('song')">×</button>
+  <h2>Our Song ♫</h2>
+  <p>Because some songs will always remind me of us.</p>
+  <label class="note" for="youtubeUrl">TEMPEL LINK YOUTUBE LAGU KALIAN</label>
+  <input id="youtubeUrl" type="text" placeholder="https://www.youtube.com/watch?v=..." />
+  <button class="btn" onclick="loadSong()">Play our song</button>
+  <button class="btn secondary" onclick="clearSong()">Clear</button>
+  <div class="video" id="videoBox" style="display:none"><iframe id="youtubeFrame" title="YouTube music player" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+  <p class="note">Masukkan link video YouTube biasa atau youtu.be. Pemutaran otomatis dapat dibatasi oleh browser; tekan tombol play di pemutar jika perlu. Jika video tidak bisa diputar, pemilik video mungkin membatasi pemutaran di luar YouTube.</p>
+</div></div>
+
+<div class="modal" id="letter" onclick="backdropClose(event,'letter')"><div class="panel">
+  <button class="close" onclick="closeModal('letter')">×</button>
+  <h2>A Letter From My Heart</h2>
+  <div class="letter">Happy 25th birthday, my love.
+
+I hope this new chapter brings you more happiness, courage, peace, and beautiful reasons to smile. I hope you keep growing into the person you dream of becoming, and that life gives you the kindness you so deeply deserve.
+
+Thank you for your patience, your strength, and all the little things you do that mean more to me than words can explain. Even when distance makes things difficult, you remain someone I’m grateful to have in my life. I’m always wishing the best for you, your dreams, and everything that makes your heart happy.
+
+May this year be gentle with you, may your wishes find their way to you, and may you never forget how special you are.
+
+<span class="signature">All my love, and the warmest hug, always. ♡</span></div>
+  <p class="note">Kamu bisa mengedit teks surat ini langsung di file HTML nanti, pada bagian A Letter From My Heart.</p>
+</div></div>
+
+<script>
+function openModal(id){document.getElementById(id).classList.add('show');document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById(id).classList.remove('show');document.body.style.overflow=''}
+function backdropClose(e,id){if(e.target.id===id)closeModal(id)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal.show').forEach(m=>m.classList.remove('show'));document.body.style.overflow=''}})
+function showPhotos(event){
+ const box=document.getElementById('photoPreview'); box.innerHTML='';
+ [...event.target.files].forEach(file=>{
+  if(!file.type.startsWith('image/'))return;
+  const img=document.createElement('img'); img.alt=file.name; img.src=URL.createObjectURL(file); box.appendChild(img);
+ });
+}
+function getVideoId(raw){
+ try{
+  const u=new URL(raw.trim());
+  if(u.hostname==='youtu.be')return u.pathname.slice(1).split('/')[0];
+  if(u.hostname.includes('youtube.com')){
+   if(u.pathname==='/watch')return u.searchParams.get('v');
+   if(u.pathname.startsWith('/embed/'))return u.pathname.split('/')[2];
+   if(u.pathname.startsWith('/shorts/'))return u.pathname.split('/')[2];
+  }
+ }catch(e){}
+ return null;
+}
+function loadSong(){
+ const raw=document.getElementById('youtubeUrl').value;
+ const id=getVideoId(raw);
+ if(!id){alert('Link YouTube belum valid. Coba salin link video YouTube biasa.');return}
+ document.getElementById('youtubeFrame').src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1&rel=0';
+ document.getElementById('videoBox').style.display='block';
+}
+function clearSong(){document.getElementById('youtubeFrame').src='';document.getElementById('videoBox').style.display='none';document.getElementById('youtubeUrl').value=''}
+</script>
+</body>
+</html>
